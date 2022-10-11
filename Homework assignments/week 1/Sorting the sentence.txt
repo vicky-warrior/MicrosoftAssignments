@@ -1,0 +1,16 @@
+class Solution {
+    public String sortSentence(String s) {
+        String[] str=s.split(" ");
+        String newStr[] = new String[str.length];
+        for(int i=0;i<str.length;i++){
+            int wordLen=str[i].length();
+            String word = str[i].substring(0,wordLen-1);
+            newStr[str[i].charAt(wordLen-1)-'0'-1]=word;
+        }
+        StringBuilder r= new StringBuilder(newStr[0]);
+       for(int i=1;i<newStr.length;i++){
+           r.append(" "+newStr[i]);
+       }
+        return r.toString();
+    }
+}
